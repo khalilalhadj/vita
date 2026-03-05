@@ -25,8 +25,8 @@ document.querySelector('#app').innerHTML = `
   <div  class="splide__track">
     <ul class="splide__list">
       <li class="splide__slide">
-      <img class="animalPhoto" src="" alt="" />
-        <h1 class="animal"></h1>
+      <img class="animalPhoto" src="../images/Bear.png" alt="Медведь" />
+        <h1 class="animal">Медведь</h1>
       </li>
     </ul>
  <button id="counter" type="button" class="button" > Тык! </button>
