@@ -1,21 +1,30 @@
 import './style.css'
 
 const animalsObj = [
-	{ name: 'Медведь', url: '../images/Bear.png' },
-	{ name: 'Кот', url: '../images/cat.png' },
-	{ name: 'Курица', url: '../images/chicken.png' },
-	{ name: 'Корова', url: '../images/cow.png' },
-	{ name: 'Собака', url: '../images/dog.png' },
-	{ name: 'Утка', url: '../images/duck.png' },
-	{ name: 'Лиса', url: '../images/fox.png' },
-	{ name: 'Жираф', url: '../images/giraffe.png' },
-	{ name: 'Козел', url: '../images/goat.png' },
-	{ name: 'Гусь', url: '../images/goose.png' },
-	{ name: 'Лошадь', url: '../images/horse.png' },
-	{ name: 'Свинья', url: '../images/pig.png' },
-	{ name: 'Кролик', url: '../images/rabbit.png' },
-	{ name: 'Овца', url: '../images/sheep.png' },
-	{ name: 'Волк', url: '../images/wolf.png' },
+	{ name: 'Медведь', url: new URL('../images/Bear.png', import.meta.url).href },
+	{ name: 'Кот', url: new URL('../images/cat.png', import.meta.url).href },
+	{
+		name: 'Курица',
+		url: new URL('../images/chicken.png', import.meta.url).href,
+	},
+	{ name: 'Корова', url: new URL('../images/cow.png', import.meta.url).href },
+	{ name: 'Собака', url: new URL('../images/dog.png', import.meta.url).href },
+	{ name: 'Утка', url: new URL('../images/duck.png', import.meta.url).href },
+	{ name: 'Лиса', url: new URL('../images/fox.png', import.meta.url).href },
+	{
+		name: 'Жираф',
+		url: new URL('../images/giraffe.png', import.meta.url).href,
+	},
+	{ name: 'Козел', url: new URL('../images/goat.png', import.meta.url).href },
+	{ name: 'Гусь', url: new URL('../images/goose.png', import.meta.url).href },
+	{ name: 'Лошадь', url: new URL('../images/horse.png', import.meta.url).href },
+	{ name: 'Свинья', url: new URL('../images/pig.png', import.meta.url).href },
+	{
+		name: 'Кролик',
+		url: new URL('../images/rabbit.png', import.meta.url).href,
+	},
+	{ name: 'Овца', url: new URL('../images/sheep.png', import.meta.url).href },
+	{ name: 'Волк', url: new URL('../images/wolf.png', import.meta.url).href },
 ]
 
 document.querySelector('#app').innerHTML = `
@@ -25,7 +34,7 @@ document.querySelector('#app').innerHTML = `
   <div  class="splide__track">
     <ul class="splide__list">
       <li class="splide__slide">
-      <img class="animalPhoto" src="../images/Bear.png" alt="Медведь" />
+      <img class="animalPhoto" src="${animalsObj[0].url}" alt="${animalsObj[0].name}" />
         <h1 class="animal">Медведь</h1>
       </li>
     </ul>
@@ -45,53 +54,3 @@ counter.onclick = function () {
 	animalName.textContent = animal.name
 	animalImg.src = animal.url
 }
-
-// const picture = document.querySelector('#counter')
-// picture.onclick = function () {
-// 	const random = Math.floor(Math.random() * animalImgs.length)
-// 	const animalPhotos = document.querySelector('.animalPhoto')
-// 	animalPhotos.textContent = animalImgs[random]
-// }
-
-// const counter = document.querySelector('#counter')
-// counter.onclick = function () {
-// 	const random = Math.floor(Math.random() * animals.length)
-// 	const animalName = document.querySelector('.animal')
-// 	animalName.textContent = animals[random]
-// }
-
-// const animals = [
-// 	'Кот',
-// 	'Собака',
-// 	'Жираф',
-// 	'Лошадь',
-// 	'Корова',
-// 	'Коза',
-// 	'Овца',
-// 	'Свинья',
-// 	'Курица',
-// 	'Утка',
-// 	'Гусь',
-// 	'Кролик',
-// 	'Медведь',
-// 	'Лиса',
-// 	'Волк',
-// ]
-
-// const animalImgs = [
-// 	'../images/Bear.png',
-// 	'../images/cat.png',
-// 	'../images/chicken.png',
-// 	'../images/cow.png',
-// 	'../images/dog.png',
-// 	'../images/duck.png',
-// 	'../images/fox.png',
-// 	'../images/giraffe.png',
-// 	'../images/goat.png',
-// 	'../images/goose.png',
-// 	'../images/horse.png',
-// 	'../images/pig.png',
-// 	'../images/rabbit.png',
-// 	'../images/sheep.png',
-// 	'../images/wolf.png',
-// ]
