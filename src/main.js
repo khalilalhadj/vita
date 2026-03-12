@@ -1,4 +1,6 @@
 import './style.css'
+import Splide from '@splidejs/splide'
+import '@splidejs/splide/css'
 
 const animalsObj = [
 	{ name: 'Медведь', url: new URL('../images/Bear.png', import.meta.url).href },
@@ -35,8 +37,9 @@ document.querySelector('#app').innerHTML = `
     <ul class="splide__list">
       <li class="splide__slide">
       <img class="animalPhoto" src="${animalsObj[0].url}" alt="${animalsObj[0].name}" />
-        <h1 class="animal">Медведь</h1>
+        <h1 class="animal">${animalsObj[0].name}</h1>
       </li>
+			
     </ul>
  <button id="counter" type="button" class="button" > Тык! </button>
 </div>
@@ -49,8 +52,10 @@ counter.onclick = function () {
 	const animalName = document.querySelector('.animal')
 	const animalImg = document.querySelector('.animalPhoto')
 
-	const animal = animalsObj[random]
+	const { name, url } = animalsObj[random]
 
-	animalName.textContent = animal.name
-	animalImg.src = animal.url
+	animalName.textContent = name
+	animalImg.src = url
 }
+
+new Splide('.splide').mount()
