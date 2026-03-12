@@ -21,11 +21,20 @@ body {
 	width: clamp(180px, 30vw, 420px);
 	height: auto;
 	border-radius: 35px;
+	transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 h1 {
 	font-size: clamp(1.8rem, 4vw, 3.2rem);
-	line-height: 1.1;
+	transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.show {
+	transform: translateY(0) scale(1);
+}
+
+.hide {
+	transform: translateY(10px) scale(0.9);
 }
 
 .button {

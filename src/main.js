@@ -1,6 +1,4 @@
 import './style.css'
-import Splide from '@splidejs/splide'
-import '@splidejs/splide/css'
 
 const animalsObj = [
 	{ name: 'Медведь', url: new URL('../images/Bear.png', import.meta.url).href },
@@ -33,14 +31,9 @@ document.querySelector('#app').innerHTML = `
 
 
 <section class="splide" aria-label="Splide Basic HTML Example">
-  <div  class="splide__track">
-    <ul class="splide__list">
-      <li class="splide__slide">
-      <img class="animalPhoto" src="${animalsObj[0].url}" alt="${animalsObj[0].name}" />
-        <h1 class="animal">${animalsObj[0].name}</h1>
-      </li>
-			
-    </ul>
+  <div>
+      <img class="animalPhoto show" src="${animalsObj[0].url}" alt="${animalsObj[0].name}" />
+        <h1 class="animal show">${animalsObj[0].name}</h1>
  <button id="counter" type="button" class="button" > Тык! </button>
 </div>
 </section>
@@ -56,6 +49,22 @@ counter.onclick = function () {
 
 	animalName.textContent = name
 	animalImg.src = url
-}
 
-new Splide('.splide').mount()
+	animalImg.classList.remove('show')
+	animalImg.classList.add('hide')
+
+	animalName.classList.remove('show')
+	animalName.classList.add('hide')
+
+	setTimeout(() => {
+		animalName.textContent = name
+		animalImg.src = url
+		animalImg.alt = name
+
+		animalName.classList.remove('hide')
+		animalName.classList.add('show')
+
+		animalImg.classList.remove('hide')
+		animalImg.classList.add('show')
+	}, 350)
+}
